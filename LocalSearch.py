@@ -19,7 +19,7 @@ class local_search_motion:
 
     def isFeasible(self, Inputs: inputs):
         """
-        Only the movement with negative gain is selected
+        Only the motion with negative gain is selected
         :param Inputs:
         :return:
         """
@@ -37,7 +37,7 @@ class local_search_motion:
 class _2Opt(local_search_motion):
     def __init__(self, i: int, j: int, **portions):
         super().__init__(i, j, **portions)
-        self.Name: str = 'inverse insertion'
+        self.Name: str = '2opt motion'
 
     def Execution(self):
         if self.OnePortion:
@@ -75,7 +75,7 @@ class Swap(local_search_motion):
     def __init__(self, i: int, j: int, **portions):
         super().__init__(i, j, **portions)
         self.FirstBorder = len(self.GiantTourPortion1)
-        self.Name: str = 'inverse insertion'
+        self.Name: str = 'swap'
 
     def Execution(self):
         if self.OnePortion:
@@ -133,7 +133,7 @@ class Insertion(local_search_motion):
         super().__init__(i, j, **portions)
         self.N: int = n
         self.With2Opt: bool = with2opt
-        self.Name: str = 'inverse insertion'
+        self.Name: str = 'insertion'
 
     def Execution(self):
         if self.OnePortion:
