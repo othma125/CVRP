@@ -4,7 +4,7 @@ from typing import List
 class Motion:
     def __init__(self, Id1: int, Id2: int):
         """
-        Local search movement between two indexes
+        Local search motion between two indexes
         :param Id1:
         :param Id2:
         """
